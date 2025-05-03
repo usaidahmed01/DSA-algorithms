@@ -1,0 +1,19 @@
+{
+    "C_Cpp.errorSquiggles": "enabled",
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "bitset": "cpp",
+        "vector": "cpp",
+        "memory": "cpp",
+        "system_error": "cpp",
+        "thread": "cpp",
+        "typeindex": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "array": "cpp"
+    }
+}
