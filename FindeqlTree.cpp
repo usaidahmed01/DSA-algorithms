@@ -73,7 +73,7 @@ bool equality(bst *node1, bst *node2)
 {
     vector<int> tree1 = preOrder(node1);
     vector<int> tree2 = preOrder(node2);
-    descendingSort(tree1);
+    descendingSort(tree1); // Directly gives the descending order.
     descendingSort(tree2);
 
 

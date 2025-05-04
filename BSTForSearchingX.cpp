@@ -60,9 +60,9 @@ main(){
     int xValue =  findVal(toSearch , heap);
 
     if(xValue == 0) cout<<"no Predecessor."<<endl;
-    cout<<"Predecessor of "<<heap[xValue]<< " "<<heap[xValue - 1]<<endl;
+    else cout<<"Predecessor of "<<heap[xValue]<< " "<<heap[xValue - 1]<<endl;
 
     if(xValue == heap.size() - 1) cout<<"No Successor."<<endl;
-    cout<<"Successor of "<<heap[xValue]<< " "<<heap[xValue + 1]<<endl;
+    else cout<<"Successor of "<<heap[xValue]<< " "<<heap[xValue + 1]<<endl;
 
 }

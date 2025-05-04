@@ -111,7 +111,7 @@ void findMaxAndMiddle(){
     swap(maxNode->data , lastNode->data);
 
     dLinkedList* middleNode = startDLL;
-    for(int i = 1 ; i <= totalNodes / 2 ; i++){
+    for(int i = 0 ; i < totalNodes / 2 ; i++){
         middleNode = middleNode->next;
     }
 

@@ -79,12 +79,12 @@ void deleteItem()
     {
         linkedList *temp = start;
         linkedList *last = start;
-        start = start->next;
-
+        
         do
         {
             last = last->next;
-        } while (last != start); // get last value so that we can link the last item with the first element.
+        } while (last->next != start); // get last value so that we can link the last item with the first element.
+        start = start->next;
         last->next = start;
 
         cout << "Your Given Value has been deleted. ";

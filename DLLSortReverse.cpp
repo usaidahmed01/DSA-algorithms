@@ -167,7 +167,6 @@ void insert() {
     cout << "Enter Value: \n";
     cin >> ptr->data;
     ptr->next = nullptr;
-    ptr->prev = nullptr;
 
     if (start == nullptr) {
         start = ptr;
@@ -179,7 +178,7 @@ void insert() {
     }
 
     // Sort after every insertion
-    // quickSort(start, lastNode);
+    quickSort(start, lastNode);
 }
 
 void print() {
@@ -259,7 +258,7 @@ int main() {
     print();
     cout << endl;
     // copyReverseList();
-    reverseMain();
+    // reverseMain();
 
     return 0;
 }

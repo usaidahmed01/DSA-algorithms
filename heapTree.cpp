@@ -75,9 +75,49 @@ void DeleteHeap(vector<int> &heap)
     print(heap);
 }
 void heapSort(vector<int> &heap){
-    for(int i = heap.size() - 1 ; i >= 0 ; i--){
-        cout<<heap[i]<<" ";
+    vector<int>sortedHeap;
+
+    for(int k = 0 ; k < heap.size() ; k++){
+        int last = heap.size() - 1;
+        sortedHeap.push_back(heap[0]);
+        swap(heap[0], heap[last]); // Swap root with last
+        heap.pop_back();           // Remove last
+    
+        int i = 0;
+        int size = heap.size();
+    
+        while (true)
+        {
+            int left = 2 * i + 1;
+            int right = 2 * i + 2;
+            int largest = i;
+    
+            if (left < size && heap[left] > heap[largest])
+            {
+                largest = left;
+            }
+            if (right < size && heap[right] > heap[largest])
+            {
+                largest = right;
+            }
+    
+            if (largest != i)
+            {
+                swap(heap[i], heap[largest]);
+                i = largest;
+            }
+            else
+            {
+                break;
+            }
+        }
+    
     }
+
+    for(int i = 0 ; i < heap.size() ; i++){
+        cout<<sortedHeap[i]<<" ";
+    }
+    
 }
 
 int main()

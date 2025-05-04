@@ -15,9 +15,15 @@ int main()
             if (arr[j] > hold)
             {
                 arr[j + 1] = arr[j];
+                arr[j] = hold;
             }else{
                 break;
             }
         }
+
+    }
+
+    for(int i = 0 ; i < arr.size() ; i++){
+        cout<<arr[i]<<" ";
     }
 }
