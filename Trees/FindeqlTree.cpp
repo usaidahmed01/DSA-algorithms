@@ -57,31 +57,27 @@ void descendingSort(vector<int> &tree)
 
 }
 
-vector<int> preOrder(bst *node)
+void preOrder( bst *node , vector<int> &treeVec)
 {
-    vector<int> tree;
     if (node != nullptr)
     {
-        tree.push_back(node->data);
-        preOrder(node->left);
-        preOrder(node->right);
+        treeVec.push_back(node->data);
+        preOrder(node->left , treeVec);
+        preOrder(node->right , treeVec);
     }
-    return tree;
 }
 
-bool equality(bst *node1, bst *node2)
+bool equality(bst *node1, bst *node2 , vector<int> &tree1Vec , vector<int> &tree2Vec)
 {
-    vector<int> tree1 = preOrder(node1);
-    vector<int> tree2 = preOrder(node2);
-    descendingSort(tree1); // Directly gives the descending order.
-    descendingSort(tree2);
+    preOrder(node1 , tree1Vec);
+    preOrder(node2 , tree2Vec);
 
 
-    if(tree1.size() != tree2.size()) return false;
+    if(tree1Vec.size() != tree2Vec.size()) return false;
 
-    for (int i = 0; i < tree1.size(); i++)
+    for (int i = 0; i < tree1Vec.size(); i++)
     {
-        if (tree1[i] != tree2[i])
+        if (tree1Vec[i] != tree2Vec[i])
         {
             return false;
         }
@@ -92,6 +88,10 @@ bool equality(bst *node1, bst *node2)
 
 main()
 {
+
+    vector<int> tree1Vec;
+    vector<int> tree2Vec;
+
     bool answer = false;
     bool flag = false;
     bst *tree1 = nullptr;
@@ -131,11 +131,18 @@ main()
             flag = false;
     }
 
-    answer = equality(tree1, tree2);
+    answer = equality(tree1, tree2 , tree1Vec , tree2Vec);
 
     if (!answer)
         cout << " Trees are Unequal. ";
+        
     else
         cout << "Trees are Equal. ";
+
+    cout<<endl;
+    descendingSort(tree1Vec);
+    cout<<endl;
+    descendingSort(tree2Vec);
+
 
 }

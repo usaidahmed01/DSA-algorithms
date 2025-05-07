@@ -172,9 +172,12 @@ void insert() {
         start = ptr;
         lastNode = ptr;
     } else {
+        lastNode->prev = lastNode;
         lastNode->next = ptr;
-        ptr->prev = lastNode;
-        lastNode = ptr;
+        lastNode = lastNode->next;
+
+        // ptr->prev = lastNode;
+        // lastNode = ptr;
     }
 
     // Sort after every insertion
